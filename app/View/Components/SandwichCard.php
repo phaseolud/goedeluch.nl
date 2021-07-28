@@ -11,9 +11,12 @@ class SandwichCard extends Component
      *
      * @return void
      */
-    public function __construct()
+
+    public $recipe;
+
+    public function __construct($recipe)
     {
-        //
+        $this->recipe = $recipe;
     }
 
     /**

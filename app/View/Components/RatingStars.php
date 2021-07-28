@@ -11,9 +11,11 @@ class RatingStars extends Component
      *
      * @return void
      */
-    public function __construct()
+
+    public float $averageRating;
+    public function __construct($averageRating)
     {
-        //
+        $this->averageRating = $averageRating ?? 0;
     }
 
     /**

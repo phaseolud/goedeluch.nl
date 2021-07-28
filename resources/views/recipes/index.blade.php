@@ -13,14 +13,15 @@
                     </div>
                 </div> {{-- random generator buttons --}}
                 <div class="w-96">
-                <x-sandwich-card />
+                    <x-sandwich-card :recipe="$recipes[0]" />
+
                 </div>
             </div>
         </div>
     </div> {{-- Header part --}}
 
-    <div class="flex items-center justify-center py-4 bg-primary-400 flex-col md:flex-row space-y-2">
-        <p class="text-white text-lg font-semibold">Zoek jouw broodje:</p>
+    <div class="flex items-center justify-center py-4 bg-primary-400 flex-col md:flex-row">
+        <p class="text-white text-lg font-semibold mb-2 md:mb-0">Zoek jouw broodje:</p>
         <form method="GET" action="#" class="flex items-center">
             <x-input class="ml-4"/>
             <button class="bg-white text-primary-400 px-2 py-2" type="submit">
@@ -33,9 +34,9 @@
         </form>
     </div> {{-- Search --}}
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-auto container px-4 2xl:px-56 pt-2 gap-4 mt-4">
-        @for($i=0;$i<10;$i++)
-            <x-sandwich-card />
-        @endfor
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-auto container px-6 2xl:px-56 pt-2 gap-4 mt-4">
+        @foreach($recipes->skip(1) as $recipe)
+            <x-sandwich-card :recipe="$recipe"/>
+            @endforeach
     </div> {{-- Index --}}
 </x-app-layout>
