@@ -18,6 +18,7 @@ class CreateRecipesTable extends Migration
             $table->foreignId('user_id')->constrained();
             $table->string('title');
             $table->integer('cooking_time_minutes');
+            $table->string('type');
             $table->timestamps();
         });
     }

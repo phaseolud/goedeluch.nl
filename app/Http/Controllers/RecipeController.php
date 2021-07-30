@@ -3,12 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Recipe;
-use Illuminate\Http\Request;
 
 class RecipeController extends Controller
 {
     public function index()
     {
-        return view('recipes.index', ['recipes' => Recipe::all()]);
+        $recipes = Recipe::where('title','like', '%'. request('search') . '%')->get();
+        return view('recipes.index', ['recipes' => $recipes]);
     }
 }

@@ -36,4 +36,9 @@ class Recipe extends Model
         return $this->ratings()->average('rating');
     }
 
+    public function getIsVegeratianAttribute()
+    {
+        return $this->type == 'vegetarian';
+    }
+
 }
