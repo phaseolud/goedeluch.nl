@@ -8,6 +8,7 @@
         <div class="flex justify-around mt-4">
                 <x-button href="?type=vlees">vlees</x-button>
                 <x-button href="?type=vega">vega</x-button>
+                <x-button href="?type=vis">vis</x-button>
             </div>
     </div> {{-- random generator buttons --}}
 

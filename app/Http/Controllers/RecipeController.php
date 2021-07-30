@@ -11,4 +11,9 @@ class RecipeController extends Controller
         $recipes = Recipe::where('title','like', '%'. request('search') . '%')->get();
         return view('recipes.index', ['recipes' => $recipes]);
     }
+
+    public function show(Recipe $recipe)
+    {
+        return view('recipes.show', ['recipe' => $recipe]);
+    }
 }

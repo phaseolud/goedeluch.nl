@@ -17,6 +17,7 @@ class CreateRecipesTable extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained();
             $table->string('title');
+            $table->string('slug');
             $table->integer('cooking_time_minutes');
             $table->string('type');
             $table->timestamps();

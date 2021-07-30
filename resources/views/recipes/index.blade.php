@@ -1,10 +1,7 @@
 <x-app-layout>
-    <div class="w-full bg-primary-300 h-full pb-8">
-        <div class="mx-auto container 2xl:px-56 pt-4 px-2">
-            <div><a href="#" class="text-white text-3xl">GoedeLunch.nl</a></div>
-            <x-random-recipe />
-        </div>
-    </div> {{-- Header part --}}
+    <x-slot name="header">
+        <x-random-recipe />
+    </x-slot>
 
     <div class="flex items-center justify-center py-4 bg-primary-400 flex-col md:flex-row">
         <p class="text-white text-lg font-semibold mb-2 md:mb-0">Zoek jouw broodje:</p>

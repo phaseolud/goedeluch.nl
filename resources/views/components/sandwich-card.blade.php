@@ -1,6 +1,6 @@
 @props(['recipe'])
 
-<a href="#" class="h-72 w-full shadow-lg flex flex-col hover:shadow-xl transition duration-300 ease-out group transform hover:-translate-y-1">
+<a href="{{route('recipes.show', ['recipe' => $recipe])}}" class="h-72 w-full shadow-lg flex flex-col hover:shadow-xl transition duration-300 ease-out group transform hover:-translate-y-1">
     <div class="flex-grow relative object-cover">
         <div class="filter brightness-50 bg-cover h-full transition duration-300 ease-in transition-opacity"
              style="background-image: url(https://source.unsplash.com/random/?sandwich);"></div>

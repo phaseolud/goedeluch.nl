@@ -19,6 +19,17 @@
     </head>
     <body class="font-serif antialiased">
             <!-- Page Content -->
+
+            <header>
+                <div class="w-full bg-primary-300 h-full pb-8">
+                    <div class="mx-auto container 2xl:px-56 pt-4 px-2">
+                        <div><a href="/" class="text-white text-3xl">GoedeLunch.nl</a></div>
+                            {{ $header }}
+
+                    </div>
+                </div> {{-- Header part --}}
+            </header>
+
             <main>
                 {{ $slot }}
             </main>
