@@ -9,19 +9,17 @@
         <div class="md:flex-row md:mx-16">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-y-16">
                 <div>
-                    <strong>Ingredienten</strong>
-                    @for($i=0;$i<10;$i++)
-                        <p class="pt-2">{{$i + 1}} kg aardappels</p>
-                    @endfor
+                    <p class="text-lg font-semibold">Ingredienten</p>
+                @foreach($recipe->ingredients as $ingredient)
+                    <p>{{ $ingredient->pivot->amount .' ' .$ingredient->pivot->unit . ' ' . $ingredient->name}}</p>
+                @endforeach
                 </div>
 
                 <div class="md:col-span-2">
-                    <strong>Beschrijving</strong>
-                    @for($i=0;$i<5;$i++)
-                        <p class="pt-8">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem, id illo
-                            incidunt maiores obcaecati odio quae vitae. Cumque dolorum eius et eum, ex labore molestiae
-                            nam nihil quibusdam sequi. Repellat.</p>
-                    @endfor
+                    <p class="text-lg font-semibold">Beschrijving</p>
+                    @foreach($recipe->steps as $step)
+                        <p class="pt-6">{{$step}}</p>
+                    @endforeach
                 </div>
             </div>
         </div>

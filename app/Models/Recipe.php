@@ -10,6 +10,7 @@ class Recipe extends Model
     use HasFactory;
 
     public $guarded = [];
+    protected $casts = ['steps' => 'array'];
 
     public function getRouteKeyName(): string
     {
@@ -39,6 +40,11 @@ class Recipe extends Model
     public function getIsVegeratianAttribute()
     {
         return $this->type == 'vegetarian';
+    }
+
+    public function ingredients()
+    {
+        return $this->belongsToMany(Ingredient::class)->withPivot(['amount', 'unit']);
     }
 
 }

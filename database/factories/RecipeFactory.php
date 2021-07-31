@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Ingredient;
 use App\Models\Recipe;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
@@ -25,9 +26,11 @@ class RecipeFactory extends Factory
         return [
             'title' => $this->faker->sentence(2),
             'slug' => $this->faker->slug(3),
+            'steps' => $this->faker->paragraphs(4),
             'cooking_time_minutes' => $this->faker->numberBetween(1,100),
             'type' => $this->faker->randomElement(['vega', 'vlees', 'vis']),
-            'user_id' => User::factory()
+            'user_id' => User::factory(),
+
         ];
     }
 }
