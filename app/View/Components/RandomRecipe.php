@@ -19,10 +19,10 @@ class RandomRecipe extends Component
     {
 
         if(in_array(request('type'), ['vega', 'vlees', 'vis'])) {
-            $this->recipe = Recipe::where('type', request('type'))->inRandomOrder()->limit(1)->get()[0];
+            $this->recipe = Recipe::where('type', request('type'))->inRandomOrder()->limit(1)->get();
         }
         else {
-            $this->recipe = Recipe::inrandomOrder()->limit(1)->get()[0];
+            $this->recipe = Recipe::inrandomOrder()->limit(1)->get();
         }
     }
 

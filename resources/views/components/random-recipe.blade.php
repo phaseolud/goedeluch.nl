@@ -13,6 +13,8 @@
     </div> {{-- random generator buttons --}}
 
     <div class="w-96">
-            <x-sandwich-card :recipe="$recipe" />
+        @if($recipe->isNotEmpty())
+            <x-sandwich-card :recipe="$recipe[0]" />
+        @endif
     </div>
 </div>
