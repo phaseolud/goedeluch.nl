@@ -15,11 +15,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [RecipeController::class, 'index'])->name('home');
-
+Route::get('/recipes/create', [RecipeController::class, 'create'])->name('recipes.create');
+Route::post('/recipes', [RecipeController::class, 'store'])->name('recipes.store');
 
 Route::get('/recipes/{recipe}', [RecipeController::class, 'show'])->name('recipes.show');
+
 Route::get('/dashboard', function () {
     return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+})->name('dashboard');
 
 require __DIR__.'/auth.php';

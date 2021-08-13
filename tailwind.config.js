@@ -12,6 +12,7 @@ module.exports = {
         colors: {
             primary: colors.emerald,
             white: colors.white,
+            gray: colors.gray,
         },
         extend: {
             fontFamily: {
