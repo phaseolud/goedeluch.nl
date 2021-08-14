@@ -30,11 +30,21 @@
         <div class="mx-auto container 2xl:px-56 pt-4 px-2" x-data="{open: false}">
             <nav class="flex justify-between items-center">
                 <a href="/" class="text-white text-3xl">GoedeLunch.nl</a>
-                <div class="hidden md:block">
-                    <a class="text-white text-lg mr-4 hover:bg-white px-4 py-2 hover:text-primary-300 transition ease-in duration-100"
-                       href="/login">Login</a>
-                    <a class="text-white text-lg mr-4 hover:bg-white px-4 py-2 hover:text-primary-300 transition ease-in duration-100"
-                       href="/register">Register</a>
+                <div class="hidden md:flex justify-end">
+                    @auth
+                        <a class="text-white text-lg mr-4 hover:bg-white px-4 py-2 hover:text-primary-300 transition ease-in duration-100"
+                           href="{{route('recipes.create')}}">Voeg toe</a>
+                        <form action="{{route('logout')}}" method="POST">
+                            @csrf
+                            <button type="submit"  class="text-white text-lg mr-4 hover:bg-white px-4 py-2 hover:text-primary-300 transition ease-in duration-100"
+                               >Log uit</button>
+                        </form>
+                    @else
+                        <a class="text-white text-lg mr-4 hover:bg-white px-4 py-2 hover:text-primary-300 transition ease-in duration-100"
+                           href="/login">Login</a>
+                        <a class="text-white text-lg mr-4 hover:bg-white px-4 py-2 hover:text-primary-300 transition ease-in duration-100"
+                           href="/register">Register</a>
+                    @endauth
                 </div>
                 <button class="text-white md:hidden" @click="open = !open">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
@@ -44,11 +54,24 @@
                     </svg>
                 </button>
             </nav>
-            <div class="absolute bg-white h-max left-0 top-16 w-full z-50 shadow-md " x-show.transition="open" @click.away="open=false">
+            <div class="absolute bg-white text-left h-max left-0 top-16 w-full z-50 shadow-md" x-show.transition="open" @click.away="open=false">
+                @auth
+                    <a class="block text-primary-400 w-full text-lg mt-4 pl-4 hover:bg-primary-300 px-4 py-2 hover:text-white transition ease-in duration-100"
+                       href="{{route('recipes.create')}}">Voeg toe</a>
+                    <form method="POST" action="{{route('logout')}}">
+                        @csrf
+                        <button
+                            type="submit" class="text-left block text-primary-400 w-full text-lg my-4 pl-4 hover:bg-primary-300 px-4 py-2 hover:text-white transition ease-in duration-100"
+                            href="/login">Log uit
+                        </button>
+                    </form>
+
+                @else
                 <a class="block text-primary-400 w-full text-lg mt-4 pl-4 hover:bg-primary-300 px-4 py-2 hover:text-white transition ease-in duration-100"
                    href="/login">Login</a>
-                <a class="block text-primary-400 w-full text-lg mt-4 pl-4 hover:bg-primary-300 px-4 py-2 hover:text-white transition ease-in duration-100"
+                <a class="block text-primary-400 w-full text-lg my-4 pl-4 hover:bg-primary-300 px-4 py-2 hover:text-white transition ease-in duration-100"
                    href="/register">Register</a>
+                @endauth
             </div>
             {{ $header }}
         </div>
