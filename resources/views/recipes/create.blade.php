@@ -1,7 +1,4 @@
 <x-app-layout>
-{{--    @push('scripts')--}}
-{{--        <script src="{{ asset('js/add.js') }}"></script>--}}
-{{--    @endpush--}}
     <x-slot name="header">
         <div class="flex justify-center h-48">
             {{--            Empty slot just for the height   --}}

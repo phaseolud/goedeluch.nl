@@ -47,9 +47,7 @@
                     </a>
                 @endif
 
-                <x-button class="ml-3">
-                    {{ __('Log in') }}
-                </x-button>
+                <button class="ml-4 bg-gray-800 text-white hover:bg-gray- transition ease-in duration-150 px-4 py-2 shadow-md" type="submit">Log in</button>
             </div>
         </form>
     </x-auth-card>
