@@ -32,7 +32,8 @@ class StoreRecipeRequest extends FormRequest
             'unit.*' => ['string', 'nullable', Rule::in(['tsp', 'tbsp', 'gram', 'ml', ''])],
             'name.*' => ['string'],
             'steps.*' => ['string'],
-            'steps' => ['array']
+            'steps' => ['array'],
+            'g-recaptcha-response' => ['required', 'recaptchav3:recipes,0.5']
         ];
     }
 }

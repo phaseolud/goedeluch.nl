@@ -30,6 +30,7 @@ class RecipeFactory extends Factory
             'cooking_time_minutes' => $this->faker->numberBetween(1,100),
             'type' => $this->faker->randomElement(['vega', 'vlees', 'vis']),
             'user_id' => User::factory(),
+            'approved' => $this->faker->boolean()
 
         ];
     }

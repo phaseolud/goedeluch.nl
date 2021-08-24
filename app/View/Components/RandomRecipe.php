@@ -17,13 +17,10 @@ class RandomRecipe extends Component
 
     public function __construct()
     {
-
-        if(in_array(request('type'), ['vega', 'vlees', 'vis'])) {
-            $this->recipe = Recipe::where('type', request('type'))->inRandomOrder()->limit(1)->get();
-        }
-        else {
-            $this->recipe = Recipe::inrandomOrder()->limit(1)->get();
-        }
+        $type = in_array(request('type'), ['vega', 'vlees', 'vis']) ? request('type') : false;
+        $this->recipe = Recipe::when($type, function ($query, $type) {
+            return $query->where('type', $type);
+        })->inRandomOrder()->limit(1)->get();
     }
 
     public function render()

@@ -18,61 +18,29 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
-
+    {!! RecaptchaV3::initJs() !!}
     @stack('scripts')
 
 </head>
 <body class="font-serif antialiased">
 <!-- Page Content -->
-
 <header>
     <div class="relative w-full bg-primary-300 h-full pb-8">
         <div class="mx-auto container 2xl:px-56 pt-4 px-2" x-data="{open: false}">
             <nav class="flex justify-between items-center">
                 <a href="/" class="text-white text-3xl">GoedeLunch.nl</a>
-                <div class="hidden md:flex justify-end">
+                <div class="flex justify-end">
                     @auth
-                        <a class="text-white text-lg mr-4 hover:bg-white px-4 py-2 hover:text-primary-300 transition ease-in duration-100"
-                           href="{{route('recipes.create')}}">Voeg toe</a>
                         <form action="{{route('logout')}}" method="POST">
                             @csrf
-                            <button type="submit"  class="text-white text-lg mr-4 hover:bg-white px-4 py-2 hover:text-primary-300 transition ease-in duration-100"
+                            <button type="submit" class="text-white text-lg mr-4 hover:bg-white px-4 py-2 hover:text-primary-300 transition ease-in duration-100"
                                >Log uit</button>
                         </form>
-                    @else
-                        <a class="text-white text-lg mr-4 hover:bg-white px-4 py-2 hover:text-primary-300 transition ease-in duration-100"
-                           href="/login">Login</a>
-                        <a class="text-white text-lg mr-4 hover:bg-white px-4 py-2 hover:text-primary-300 transition ease-in duration-100"
-                           href="/register">Register</a>
                     @endauth
-                </div>
-                <button class="text-white md:hidden" @click="open = !open">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
-                         stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                              d="M4 6h16M4 12h16M4 18h16"/>
-                    </svg>
-                </button>
-            </nav>
-            <div class="absolute bg-white text-left h-max left-0 top-16 w-full z-50 shadow-md" x-show.transition="open" @click.away="open=false">
-                @auth
-                    <a class="block text-primary-400 w-full text-lg mt-4 pl-4 hover:bg-primary-300 px-4 py-2 hover:text-white transition ease-in duration-100"
+                    <a class="text-white text-lg mr-4 hover:bg-white px-4 py-2 hover:text-primary-300 transition ease-in duration-100"
                        href="{{route('recipes.create')}}">Voeg toe</a>
-                    <form method="POST" action="{{route('logout')}}">
-                        @csrf
-                        <button
-                            type="submit" class="text-left block text-primary-400 w-full text-lg my-4 pl-4 hover:bg-primary-300 px-4 py-2 hover:text-white transition ease-in duration-100"
-                            href="/login">Log uit
-                        </button>
-                    </form>
-
-                @else
-                <a class="block text-primary-400 w-full text-lg mt-4 pl-4 hover:bg-primary-300 px-4 py-2 hover:text-white transition ease-in duration-100"
-                   href="/login">Login</a>
-                <a class="block text-primary-400 w-full text-lg my-4 pl-4 hover:bg-primary-300 px-4 py-2 hover:text-white transition ease-in duration-100"
-                   href="/register">Register</a>
-                @endauth
-            </div>
+                </div>
+            </nav>
             {{ $header }}
         </div>
     </div> {{-- Header part --}}

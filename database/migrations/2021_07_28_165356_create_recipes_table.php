@@ -21,6 +21,7 @@ class CreateRecipesTable extends Migration
             $table->json('steps');
             $table->integer('cooking_time_minutes');
             $table->string('type');
+            $table->boolean('approved')->default(0);
             $table->timestamps();
         });
     }

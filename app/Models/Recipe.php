@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Scopes\ApprovedScope;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -9,9 +10,15 @@ class Recipe extends Model
 {
     use HasFactory;
 
+
     public $guarded = [];
     protected $casts = ['steps' => 'array'];
 
+    protected static function booted()
+    {
+        static::addGlobalScope(new ApprovedScope());
+    }
+    
     public function getRouteKeyName(): string
     {
         return 'slug';
