@@ -26,8 +26,8 @@
 <!-- Page Content -->
 <header>
     <div class="relative w-full bg-primary-300 h-full pb-8">
-        <div class="mx-auto container 2xl:px-56 pt-4 px-2" x-data="{open: false}">
-            <nav class="flex justify-between items-center">
+        <div class="mx-auto container 2xl:px-56 pt-4 px-2">
+            <nav class="flex justify-between items-center mx-2">
                 <a href="/" class="text-white text-3xl">GoedeLunch.nl</a>
                 <div class="flex justify-end">
                     @auth
@@ -37,7 +37,7 @@
                                >Log uit</button>
                         </form>
                     @endauth
-                    <a class="text-white text-lg mr-4 hover:bg-white px-4 py-2 hover:text-primary-300 transition ease-in duration-100"
+                    <a class="text-white text-lg hover:bg-white px-4 py-2 hover:text-primary-300 transition ease-in duration-100"
                        href="{{route('recipes.create')}}">Voeg toe</a>
                 </div>
             </nav>

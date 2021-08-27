@@ -18,7 +18,7 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
          \App\Models\User::factory(3)->create();
-         User::factory()->create(['name' => 'Loek van Leeuwen', 'email' => 'loekvanleeuwen@outlook.com', 'password' => 'loekvanleeuwen']);
+         User::factory()->create(['name' => 'Loek van Leeuwen', 'email' => 'loekvanleeuwen@outlook.com', 'password' => bcrypt('loekvanleeuwen')]);
          $recipes = Recipe::factory(10)->hasRatings(2)
              ->hasAttached(Ingredient::factory(5), ['amount' => 100, 'unit' => 'ml'])->create();
 

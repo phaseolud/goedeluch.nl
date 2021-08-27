@@ -12,11 +12,10 @@ class EmptyStep {
     }
 }
 
-
-ingredientsHandle = function()
+ingredientsHandle = function(ingredients=[new EmptyIngredient()])
 {
     return {
-        ingredients: [new EmptyIngredient()],
+        ingredients: ingredients,
         addIngredient() {
             this.ingredients.push(new EmptyIngredient());
         },
@@ -26,9 +25,9 @@ ingredientsHandle = function()
     }
 }
 
-stepsHandle = function () {
+stepsHandle = function (steps=[new EmptyStep()]) {
     return {
-        steps: [new EmptyStep()],
+        steps: steps,
         addStep() {
             this.steps.push(new EmptyStep())
         },

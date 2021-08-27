@@ -13,6 +13,7 @@ module.exports = {
             primary: colors.emerald,
             white: colors.white,
             gray: colors.gray,
+            red: colors.red,
         },
         extend: {
             fontFamily: {

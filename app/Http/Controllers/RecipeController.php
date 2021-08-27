@@ -7,6 +7,7 @@ use App\Models\Ingredient;
 use App\Models\Recipe;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Str;
 
@@ -14,7 +15,7 @@ class RecipeController extends Controller
 {
     public function index()
     {
-        $recipes = Recipe::where('title','like', '%'. request('search') . '%')->get();
+        $recipes = Recipe::where('title','like', '%'. request('search') . '%')->approved()->get();
         return view('recipes.index', ['recipes' => $recipes]);
     }
 
@@ -29,19 +30,45 @@ class RecipeController extends Controller
         return view('recipes.create');
     }
 
+
     public function store(StoreRecipeRequest $request)
     {
         $validated = $request->validated();
         $validated['slug'] = Str::slug($validated['title']);
-        $validated['user_id'] = auth()->id();
-        $validated2 = ['title' => 'test 123', 'slug' => 'a-slug', 'user_id' => 14, 'cooking_time_minutes' => 12, 'steps' => ['step 1', 'step 2'], 'type'=> 'vega'];
-        $recipe = Recipe::create(Arr::except($validated,['name', 'amount', 'unit']));
-        $ingredient_ids = [];
+        $validated['user_id'] = auth()->id() ?? null;
+        $recipe = Recipe::create(Arr::except($validated,['name', 'amount', 'unit', 'g-recaptcha-response']));
+
         foreach ($validated['name'] as $index=>$ingredient)
         {
             $ingredient_id = Ingredient::firstOrCreate(['name' => $ingredient]);
             $recipe->ingredients()->attach($ingredient_id, ['amount' => $validated['amount'][$index], 'unit' => $validated['unit'][$index]]);
         }
-        return redirect(route('home'))->with('success', 'Dank je wel voor je recept! Het recept zal eerst worden gecontroleerd en daarna worden toegevoegd aan de website');
+        return redirect(route('home'))->with('success', 'Dank je wel voor jouw recept! Het recept zal eerst worden gecontroleerd en daarna worden toegevoegd aan de website');
+    }
+
+    public function edit(Recipe $recipe)
+    {
+        $steps_object = Collection::empty();
+        foreach ($recipe->steps as $step)
+        {
+            $steps_object->add(['description' =>$step]);
+        }
+        $recipe->steps = $steps_object;
+        return view('recipes.edit', ['recipe' => $recipe]);
+    }
+
+    public function update(StoreRecipeRequest $request, Recipe $recipe)
+    {
+        $validated = $request->validated();
+        $validated['slug'] = Str::slug($validated['title']);
+        $recipe->update(Arr::except($validated, ['name', 'amount', 'unit', 'g-recaptcha-response']));
+
+        $recipe->ingredients()->detach();
+        foreach ($validated['name'] as $index=>$ingredient)
+        {
+            $ingredient_id = Ingredient::firstOrCreate(['name' => $ingredient]);
+            $recipe->ingredients()->attach($ingredient_id, ['amount' => $validated['amount'][$index], 'unit' => $validated['unit'][$index]]);
+        }
+        return redirect(route('home'))->with('success', 'Het recept is succesvol geupdated');
     }
 }

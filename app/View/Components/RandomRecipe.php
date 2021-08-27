@@ -20,7 +20,7 @@ class RandomRecipe extends Component
         $type = in_array(request('type'), ['vega', 'vlees', 'vis']) ? request('type') : false;
         $this->recipe = Recipe::when($type, function ($query, $type) {
             return $query->where('type', $type);
-        })->inRandomOrder()->limit(1)->get();
+        })->approved()->inRandomOrder()->limit(1)->get();
     }
 
     public function render()

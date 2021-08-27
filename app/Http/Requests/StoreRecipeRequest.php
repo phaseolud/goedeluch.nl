@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Models\Recipe;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
@@ -25,7 +26,7 @@ class StoreRecipeRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => ['string', 'max:255', 'required', 'unique:recipes'],
+            'title' => ['string', 'max:255', 'required', Rule::unique('recipes')->ignore($this->recipe->id)],
             'cooking_time_minutes' => ['integer', 'required'],
             'type' => ['required', Rule::in(['vega', 'vlees', 'vis'])],
             'amount.*' => ['numeric', 'nullable'],
@@ -33,7 +34,8 @@ class StoreRecipeRequest extends FormRequest
             'name.*' => ['string'],
             'steps.*' => ['string'],
             'steps' => ['array'],
-            'g-recaptcha-response' => ['required', 'recaptchav3:recipes,0.5']
+            'g-recaptcha-response' => ['required', 'recaptchav3:recipes,0.5'],
+            'approved' => ['nullable', 'boolean']
         ];
     }
 }

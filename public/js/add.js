@@ -20,8 +20,9 @@ var EmptyStep = function EmptyStep() {
 };
 
 ingredientsHandle = function ingredientsHandle() {
+  var ingredients = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [new EmptyIngredient()];
   return {
-    ingredients: [new EmptyIngredient()],
+    ingredients: ingredients,
     addIngredient: function addIngredient() {
       this.ingredients.push(new EmptyIngredient());
     },
@@ -32,8 +33,9 @@ ingredientsHandle = function ingredientsHandle() {
 };
 
 stepsHandle = function stepsHandle() {
+  var steps = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [new EmptyStep()];
   return {
-    steps: [new EmptyStep()],
+    steps: steps,
     addStep: function addStep() {
       this.steps.push(new EmptyStep());
     },

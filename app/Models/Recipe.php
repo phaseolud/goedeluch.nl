@@ -14,11 +14,11 @@ class Recipe extends Model
     public $guarded = [];
     protected $casts = ['steps' => 'array'];
 
-    protected static function booted()
+    public function scopeApproved($query)
     {
-        static::addGlobalScope(new ApprovedScope());
+        return $query->where('approved', 1);
     }
-    
+
     public function getRouteKeyName(): string
     {
         return 'slug';
@@ -53,5 +53,6 @@ class Recipe extends Model
     {
         return $this->belongsToMany(Ingredient::class)->withPivot(['amount', 'unit']);
     }
+
 
 }

@@ -1,4 +1,5 @@
-<div class="md:col-span-3 mt-4" x-data="stepsHandle()">
+@props(['steps' => null])
+<div class="md:col-span-3 mt-4" x-data="stepsHandle({{is_null($steps)? null : json_encode($steps)}})">
     <p class="text-sm text-gray-600 block mt-3">Berijdingswijze</p>
     <template x-for="(step, index) in steps">
 

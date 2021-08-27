@@ -1,4 +1,5 @@
-<div class="md:col-span-3 mt-4" x-data="ingredientsHandle()">
+@props(['ingredients' => null])
+<div class="md:col-span-3 mt-4" x-data="ingredientsHandle({{$ingredients}})">
     <label for="amount" class="text-sm text-gray-600 block">Ingredienten</label>
     <table class="table-fixed w-full" >
         <thead>
@@ -7,10 +8,9 @@
             <td class="w-20">Eenheid</td>
             <td class="w-full">Ingredient</td>
             <td class="w-12"></td>
-
         </tr>
         </thead>
-        <template x-for="(ingredient,index) in ingredients" :key="index">
+        <template x-for="(ingredient, index) in ingredients" :key="index">
             <tr>
                 <td><input type="number" x-model="ingredient.amount" class="w-full" name="amount[]" id="amount"></td>
                 <td>
