@@ -20,7 +20,7 @@
     <script src="{{ asset('js/app.js') }}" defer></script>
     {!! RecaptchaV3::initJs() !!}
     @stack('scripts')
-
+    @livewireStyles
 </head>
 <body class="font-serif antialiased">
 <!-- Page Content -->
@@ -49,5 +49,6 @@
 <main>
     {{ $slot }}
 </main>
+@livewireScripts
 </body>
 </html>

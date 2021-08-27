@@ -1,6 +1,6 @@
 <x-app-layout>
     <x-slot name="header">
-        <x-random-recipe />
+        <livewire:random-recipe />
     </x-slot>
 
     <div class="flex items-center justify-center py-4 bg-primary-400 flex-col md:flex-row">

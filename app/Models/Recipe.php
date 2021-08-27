@@ -14,6 +14,7 @@ class Recipe extends Model
     public $guarded = [];
     protected $casts = ['steps' => 'array'];
 
+
     public function scopeApproved($query)
     {
         return $query->where('approved', 1);
