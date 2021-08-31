@@ -13,6 +13,9 @@ class Recipe extends Model
 
     public $guarded = [];
     protected $casts = ['steps' => 'array'];
+    /**
+     * @var mixed
+     */
 
 
     public function scopeApproved($query)
@@ -55,5 +58,9 @@ class Recipe extends Model
         return $this->belongsToMany(Ingredient::class)->withPivot(['amount', 'unit']);
     }
 
+    public function getImagePathAttribute()
+    {
+        return $this->image ? asset('storage/' . $this->image) : 'https://source.unsplash.com/random/?sandwich';
+    }
 
 }

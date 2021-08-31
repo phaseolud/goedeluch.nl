@@ -8,7 +8,7 @@
     <x-white-box title="Voeg een broodje toe">
         <x-form.errors />
         {{--            The form --}}
-        <form action="{{route('recipes.update', $recipe)}}" method="POST" class="grid md:grid-cols-3 gap-4 mx-2 pt-4">
+        <form action="{{route('recipes.update', $recipe)}}" method="POST" class="grid md:grid-cols-3 gap-4 mx-2 pt-4" enctype="multipart/form-data">
             @method("PUT")
             @csrf
             {!! RecaptchaV3::field('recipes') !!}

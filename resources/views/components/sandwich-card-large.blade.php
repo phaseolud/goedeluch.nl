@@ -3,7 +3,7 @@
 <div class="h-96 md:h-72 w-full shadow-lg flex flex-col md:flex-row mx-4 md:mx-16 transform translate-y-12">
     <div class="flex-grow relative object-cover">
         <div class="filter brightness-50 bg-cover h-full transition duration-300 ease-in transition-opacity"
-             style="background-image: url(https://source.unsplash.com/random/?sandwich);"></div>
+             style="background-image: url({{$recipe->image_path}});"></div>
         <div class="absolute left-2 top-2 text-white text-xs font-sans px-3 py-1 rounded-full bg-primary-300">{{$recipe->type}}</div>
     </div>
     <div class="px-2 md:px-8 flex-1 bg-white py-4 text-xs flex flex-col justify-between">

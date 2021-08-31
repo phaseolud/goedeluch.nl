@@ -3,7 +3,7 @@
 <a href="{{route('recipes.show', ['recipe' => $recipe])}}" class="h-72 w-full shadow-lg flex flex-col hover:shadow-xl transition duration-300 ease-out group transform hover:-translate-y-1">
     <div class="flex-grow relative object-cover">
         <div class="filter brightness-50 bg-cover h-full transition duration-300 ease-in transition-opacity"
-             style="background-image: url(https://source.unsplash.com/random/?sandwich);"></div>
+             style="background-image: url( {{ $recipe->image_path  }});"></div>
         <div class="absolute left-2 bottom-2 text-white font-bold text-xl">{{$recipe->title}}</div>
         <div class="absolute left-2 top-2 text-white text-xs font-sans px-3 py-1 rounded-full bg-primary-300">{{$recipe->type}}</div>
     </div>
