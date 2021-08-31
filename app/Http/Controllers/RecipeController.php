@@ -21,7 +21,6 @@ class RecipeController extends Controller
 
     public function show(Recipe $recipe)
     {
-        Gate::authorize('approved', $recipe);
         return view('recipes.show', ['recipe' => $recipe]);
     }
 
@@ -36,6 +35,8 @@ class RecipeController extends Controller
         $validated = $request->validated();
         $validated['slug'] = Str::slug($validated['title']);
         $validated['user_id'] = auth()->id() ?? null;
+        $validated['image'] = $request->file('image')->store('images');
+
         $recipe = Recipe::create(Arr::except($validated,['name', 'amount', 'unit', 'g-recaptcha-response']));
 
         foreach ($validated['name'] as $index=>$ingredient)
@@ -61,6 +62,12 @@ class RecipeController extends Controller
     {
         $validated = $request->validated();
         $validated['slug'] = Str::slug($validated['title']);
+
+        if (isset($validated['image']))
+        {
+            $validated['image'] = $request->file('image')->store('images');
+        }
+
         $recipe->update(Arr::except($validated, ['name', 'amount', 'unit', 'g-recaptcha-response']));
 
         $recipe->ingredients()->detach();

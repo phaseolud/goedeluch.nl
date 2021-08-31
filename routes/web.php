@@ -17,13 +17,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [RecipeController::class, 'index'])->name('home');
 Route::get('/recipes/create', [RecipeController::class, 'create'])->name('recipes.create');
 Route::post('/recipes', [RecipeController::class, 'store'])->name('recipes.store');
-
-Route::get('recipes/{recipe}/edit', [RecipeController::class, 'edit'])->name('recipes.edit');
 Route::put('recipes/{recipe}', [RecipeController::class, 'update'])->name('recipes.update');
-Route::get('/recipes/{recipe}', [RecipeController::class, 'show'])->name('recipes.show');
+
+Route::get('recipes/{recipe}/edit', [RecipeController::class, 'edit'])->name('recipes.edit')->middleware('can:admin');
+Route::get('/recipes/{recipe}', [RecipeController::class, 'show'])->name('recipes.show')->middleware('can:approved');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
-})->name('dashboard');
+})->name('dashboard')->middleware('can:admin');
 
 require __DIR__.'/auth.php';

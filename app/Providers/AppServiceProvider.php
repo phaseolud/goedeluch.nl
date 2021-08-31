@@ -29,5 +29,10 @@ class AppServiceProvider extends ServiceProvider
         Gate::define('approved', function (?User $user, Recipe $recipe) {
             return optional($user)->name == 'Loek van Leeuwen' || $recipe->approved == 1;
         });
+
+        Gate::define('admin', function(?User $user) {
+           return optional($user)->name == 'Loek van Leeuwen';
+        });
+
     }
 }

@@ -8,7 +8,7 @@
     <x-white-box title="Voeg een broodje toe">
         <x-form.errors />
         {{--            The form --}}
-        <form action="{{route('recipes.store')}}" method="POST" class="grid md:grid-cols-3 gap-4 mx-2 pt-4">
+        <form action="{{route('recipes.store')}}" method="POST" class="grid md:grid-cols-3 gap-4 mx-2 pt-4" enctype="multipart/form-data">
             @csrf
             {!! RecaptchaV3::field('recipes') !!}
             <x-form.input type="text" name="title" label="Naam broodje" required/>
@@ -19,6 +19,7 @@
                 <option value="vlees">Vlees</option>
                 <option value="vis">Vis</option>
             </x-form.select>
+            <x-form.input type="file" accept="image" name="image" label="Afbeelding"/>
 
             <x-form.ingredients-table />
             <x-form.steps-table />

@@ -20,6 +20,7 @@
                 <option value="vlees"{{ $recipe->type == 'vlees' ? 'selected' : '' }}>Vlees</option>
                 <option value="vis"{{ $recipe->type == 'vis' ? 'selected' : '' }}>Vis</option>
             </x-form.select>
+            <x-form.input type="file" accept="image" name="image" label="Afbeelding"/>
 
             <x-form.ingredients-table :ingredients="$recipe->ingredients" />
             <x-form.steps-table :steps="$recipe->steps" />
