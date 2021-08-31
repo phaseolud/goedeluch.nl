@@ -1,1 +1,48 @@
-(()=>{function n(n,t){if(!(n instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function t(){n(this,t),this.amount=null,this.unit=null,this.name=null},e=function t(){n(this,t),this.description=null};ingredientsHandle=function(){var n=arguments.length>0&&void 0!==arguments[0]?arguments[0]:[new t];return{ingredients:n,addIngredient:function(){this.ingredients.push(new t)},removeIngredient:function(n){this.ingredients.splice(n,1)}}},stepsHandle=function(){var n=arguments.length>0&&void 0!==arguments[0]?arguments[0]:[new e];return{steps:n,addStep:function(){this.steps.push(new e)},removeStep:function(n){this.steps.splice(n,1)}}}})();
+/******/ (() => { // webpackBootstrap
+var __webpack_exports__ = {};
+/*!*****************************!*\
+  !*** ./resources/js/add.js ***!
+  \*****************************/
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var EmptyIngredient = function EmptyIngredient() {
+  _classCallCheck(this, EmptyIngredient);
+
+  this.amount = null;
+  this.unit = null;
+  this.name = null;
+};
+
+var EmptyStep = function EmptyStep() {
+  _classCallCheck(this, EmptyStep);
+
+  this.description = null;
+};
+
+ingredientsHandle = function ingredientsHandle() {
+  var ingredients = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [new EmptyIngredient()];
+  return {
+    ingredients: ingredients,
+    addIngredient: function addIngredient() {
+      this.ingredients.push(new EmptyIngredient());
+    },
+    removeIngredient: function removeIngredient(index) {
+      this.ingredients.splice(index, 1);
+    }
+  };
+};
+
+stepsHandle = function stepsHandle() {
+  var steps = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [new EmptyStep()];
+  return {
+    steps: steps,
+    addStep: function addStep() {
+      this.steps.push(new EmptyStep());
+    },
+    removeStep: function removeStep(index) {
+      this.steps.splice(index, 1);
+    }
+  };
+};
+/******/ })()
+;

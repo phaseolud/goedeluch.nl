@@ -16,7 +16,7 @@
         <div class="flex justify-between">
             <div class="flex items-center">
                 <x-rating-stars :average-rating="$recipe->average_rating"/>
-                <p class="underline pl-2 text-sm">Beoordeel</p></div>
+                <livewire:rate-recipe :recipe="$recipe" />
             <div class="flex space-x-2">
                 <div class="h-5 w-5">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24"

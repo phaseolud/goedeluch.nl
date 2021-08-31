@@ -20,7 +20,7 @@ Route::post('/recipes', [RecipeController::class, 'store'])->name('recipes.store
 Route::put('recipes/{recipe}', [RecipeController::class, 'update'])->name('recipes.update');
 
 Route::get('recipes/{recipe}/edit', [RecipeController::class, 'edit'])->name('recipes.edit')->middleware('can:admin');
-Route::get('/recipes/{recipe}', [RecipeController::class, 'show'])->name('recipes.show')->middleware('can:approved');
+Route::get('/recipes/{recipe}', [RecipeController::class, 'show'])->name('recipes.show')->middleware('can:approved,recipe');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
