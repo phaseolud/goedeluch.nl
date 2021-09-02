@@ -22,10 +22,20 @@
     @stack('scripts')
     @livewireStyles
 </head>
-<body class="font-serif antialiased">
+<style>
+    body {
+        background-image: url({{asset('images/DrawKit-cooking-kitchen-food-vector-illustrations-03.svg')}});
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 120%;
+        background-position-y: -100px;
+        background-position-x: 50%;
+    }
+</style>
+<body class="font-serif antialiased min-h-screen flex flex-col">
 <!-- Page Content -->
 <header>
-    <div class="relative w-full bg-primary-300 h-full pb-8">
+    <div class="relative w-full bg-primary-400 bg-opacity-95 pb-8">
         <div class="mx-auto container 2xl:px-56 pt-4 px-2">
             <nav class="flex justify-between items-center mx-2">
                 <a href="/" class="text-white text-3xl">GoedeLunch.nl</a>
@@ -46,7 +56,7 @@
     </div> {{-- Header part --}}
 </header>
 
-<main>
+<main class="pb-8 bg-white bg-opacity-95 flex-grow">
     {{ $slot }}
 </main>
 @livewireScripts

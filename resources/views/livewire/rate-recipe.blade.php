@@ -2,7 +2,7 @@
     <button @click="open = !open" class="underline text-sm">Beoordeel</button>
     <form class="border border-4 absolute bg-white shadow-md transform -left-1/2 -bottom-full mb-12 w-max px-4 py-2 flex" method="POST" x-show="open" @click.away="open = false" @mouseover.away="rating = 0" x-cloak>
         @if($already_rated)
-            <p class="text-xs">Dank je voor je beoordeling!</p>
+            <p class="text-xs">Bedankt voor je beoordeling!</p>
         @else
         @for($i=0;$i<5;$i++)
             <svg wire:click="setRating({{$i + 1}})" xmlns="http://www.w3.org/2000/svg" @mouseover="rating = {{$i + 1}}" class="h-7 w-7 text-primary-400" x-bind:fill=" {{$i}} < rating ? 'currentColor' : 'none'" viewBox="0 0 24 24" stroke="currentColor">

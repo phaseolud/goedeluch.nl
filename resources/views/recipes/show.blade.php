@@ -5,7 +5,7 @@
         </div>
     </x-slot>
 
-    <div class="mx-auto container px-6 2xl:px-56 gap-4 mt-64 md:mt-40">
+    <div class="mx-auto container px-6 2xl:px-56 gap-4 pt-64 md:pt-40">
         <div class="md:flex-row md:mx-16">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-y-16">
                 <div>

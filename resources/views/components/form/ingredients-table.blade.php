@@ -23,7 +23,7 @@
                     </select>
                 </td>
                 <td><input type="text" class="w-full" name="name[]" id="name" x-model="ingredient.name" required/></td>
-                <td><button type="button" class="text-lg pl-4" x-on:click="removeIngredient(index)">&times;</button></td>
+                <td><button type="button" class="text-lg ml-4" x-on:click="removeIngredient(index)">&times;</button></td>
             </tr>
         </template>
     </table>

@@ -21,6 +21,7 @@
                 <option value="vis"{{ $recipe->type == 'vis' ? 'selected' : '' }}>Vis</option>
             </x-form.select>
             <x-form.input type="file" accept="image" name="image" label="Afbeelding"/>
+            <x-form.textarea name="description" label="Omschrijving" required>{{$recipe->description}}</x-form.textarea>
 
             <x-form.ingredients-table :ingredients="$recipe->ingredients" />
             <x-form.steps-table :steps="$recipe->steps" />

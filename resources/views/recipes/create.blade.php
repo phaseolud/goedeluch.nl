@@ -20,7 +20,7 @@
                 <option value="vis">Vis</option>
             </x-form.select>
             <x-form.input type="file" accept="image" name="image" label="Afbeelding"/>
-
+            <x-form.textarea name="description" label="Omschrijving" required/>
             <x-form.ingredients-table />
             <x-form.steps-table />
 

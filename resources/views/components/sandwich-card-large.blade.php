@@ -10,14 +10,13 @@
         <div>
             <p class="font-semibold text-xl">{{$recipe->title}}</p>
             <p class="text-sm pt-4">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque cupiditate est et laudantium officia
-                placeat, provident quidem repellendus similique sint! Animi at commodi dignissimos dolore doloremque.
-            </p></div>
-        <div class="flex justify-between">
+                {{ $recipe->description }}
+            </p>
+        </div>
             <div class="flex items-center">
                 <x-rating-stars :average-rating="$recipe->average_rating"/>
                 <livewire:rate-recipe :recipe="$recipe" />
-            <div class="flex space-x-2">
+            <div class="flex space-x-1 ml-2">
                 <div class="h-5 w-5">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24"
                          stroke="currentColor">

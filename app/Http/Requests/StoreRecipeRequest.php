@@ -37,6 +37,7 @@ class StoreRecipeRequest extends FormRequest
             'type' => ['required', Rule::in(['vega', 'vlees', 'vis'])],
             'amount.*' => ['numeric', 'nullable'],
             'unit.*' => ['string', 'nullable', Rule::in(['tsp', 'tbsp', 'gram', 'ml', ''])],
+            'description' => ['string', 'required'],
             'name.*' => ['string'],
             'steps.*' => ['string'],
             'steps' => ['array'],

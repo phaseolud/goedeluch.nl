@@ -2,13 +2,20 @@
     <x-slot name="header">
         <livewire:random-recipe />
     </x-slot>
+    <div class="mx-auto container px-6 2xl:px-56 py-8">
+        <p class="text-lg mb-2">
+            Ben jij ook altijd op zoek naar een lekker broodje om te lunchen, gewoon even iets anders dan de boterham met pindakaas? Op deze website is een volledig overzicht met lekkere lunchgerechten, die ervoor zorgen heerlijk van jouw lunch kan genieten! Probeer hierboven op een van de knoppen vlees, vis of vega te klikken,
+            om een willekeurig broodje te zoeken. Ook kan je hieronder op zoek naar jouw favoriete broodje. Heb je zelf een goed recept of idee? Laat het weten en voeg het broodje toe!
+            Eet smakelijk!
+        </p>
+    </div>
 
-    <div class="flex items-center justify-center py-4 bg-primary-400 flex-col md:flex-row">
-        <p class="text-white text-lg font-semibold mb-2 md:mb-0">Zoek jouw broodje:</p>
+    <div class="flex items-center justify-center py-6 bg-primary-400 flex-col md:flex-row">
+        <p class="text-white text-xl font-semibold mb-2 md:mb-0">Zoek jouw broodje:</p>
         <form method="GET" action="{{ route('home') }}" class="flex items-center">
             <div class="relative">
             <x-input class="ml-4" name="search" value="{{request('search')}}"/>
-            <button class=" absolute bg-white text-primary-400  right-2 inset-y-0 " type="submit">
+            <button class=" absolute bg-white text-primary-400  right-2 inset-y-0" type="submit">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
                      stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
