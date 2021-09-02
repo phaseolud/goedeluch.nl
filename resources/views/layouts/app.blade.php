@@ -25,7 +25,7 @@
 <style>
     body {
         background-image: url({{asset('images/DrawKit-cooking-kitchen-food-vector-illustrations-03.svg')}});
-        background-repeat: no-repeat;
+        background-repeat: repeat-y;
         background-attachment: fixed;
         background-size: 120%;
         background-position-y: -100px;
