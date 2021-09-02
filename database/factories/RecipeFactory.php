@@ -27,7 +27,7 @@ class RecipeFactory extends Factory
             'title' => $this->faker->sentence(2),
             'slug' => $this->faker->slug(3),
             'steps' => $this->faker->paragraphs(4),
-            'description' => $this->faker->paragraphs(3, true),
+            'description' => $this->faker->paragraphs(1, true),
             'cooking_time_minutes' => $this->faker->numberBetween(1,100),
             'type' => $this->faker->randomElement(['vega', 'vlees', 'vis']),
             'user_id' => User::factory(),
