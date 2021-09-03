@@ -60,7 +60,7 @@ class Recipe extends Model
 
     public function getImagePathAttribute()
     {
-        return $this->image ? asset('storage/' . $this->image) : 'https://source.unsplash.com/random/?sandwich';
+        return $this->image ? asset('storage/' . $this->image) : asset('images/DrawKit-cooking-kitchen-food-vector-illustrations-12.svg');
     }
 
 }

@@ -18,9 +18,9 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
-    {!! RecaptchaV3::initJs() !!}
     @stack('scripts')
     @livewireStyles
+    {!! Recaptcha::htmlScriptTagJsApi() !!}
 </head>
 <style>
     body {

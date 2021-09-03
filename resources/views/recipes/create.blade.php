@@ -10,7 +10,6 @@
         {{--            The form --}}
         <form action="{{route('recipes.store')}}" method="POST" class="grid md:grid-cols-3 gap-4 mx-2 pt-4" enctype="multipart/form-data">
             @csrf
-            {!! RecaptchaV3::field('recipes') !!}
             <x-form.input type="text" name="title" label="Naam broodje" required/>
             <x-form.input type="number" name="cooking_time_minutes" label="Bereidingstijd (minuten)" required/>
 
@@ -25,7 +24,7 @@
             <x-form.steps-table />
 
             <div class="md:col-span-3 flex justify-between items-center">
-                <x-form.recaptcha-text/>
+                {!! ReCaptcha::htmlFormSnippet() !!}
                 <button class="bg-primary-300 text-white text-left text-sm px-4 py-2 shadow-md flex-shrink-0">Deel recept!</button>
             </div>
         </form>

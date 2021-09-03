@@ -34,7 +34,10 @@ class RecipeController extends Controller
         $validated = $request->validated();
         $validated['slug'] = Str::slug($validated['title']);
         $validated['user_id'] = auth()->id() ?? null;
-        $validated['image'] = $request->file('image')->store('images');
+        if(isset($validated['image']))
+        {
+            $validated['image'] = $request->file('image')->store('images');
+        }
 
         $recipe = Recipe::create(Arr::except($validated,['name', 'amount', 'unit', 'g-recaptcha-response']));
 
@@ -76,5 +79,11 @@ class RecipeController extends Controller
             $recipe->ingredients()->attach($ingredient_id, ['amount' => $validated['amount'][$index], 'unit' => $validated['unit'][$index]]);
         }
         return redirect(route('home'))->with('success', 'Het recept is succesvol geupdated');
+    }
+
+    public function destroy(Recipe $recipe)
+    {
+        $recipe->delete();
+        return redirect(route('home'))->with('success', 'Het recept is successvol verwijderd');
     }
 }

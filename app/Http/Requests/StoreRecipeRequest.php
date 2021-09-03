@@ -41,7 +41,7 @@ class StoreRecipeRequest extends FormRequest
             'name.*' => ['string'],
             'steps.*' => ['string'],
             'steps' => ['array'],
-            'g-recaptcha-response' => ['required', 'recaptchav3:recipes,0.5'],
+            'g-recaptcha-response' => 'recaptcha',
             'approved' => ['nullable', 'boolean', Gate::allows('admin') ? '' : 'prohibited' ],
             'image' => ['nullable', 'image']
         ];

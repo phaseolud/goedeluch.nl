@@ -21,7 +21,7 @@ Route::put('recipes/{recipe}', [RecipeController::class, 'update'])->name('recip
 
 Route::get('recipes/{recipe}/edit', [RecipeController::class, 'edit'])->name('recipes.edit')->middleware('can:admin');
 Route::get('/recipes/{recipe}', [RecipeController::class, 'show'])->name('recipes.show')->middleware('can:approved,recipe');
-
+Route::delete('/recipes/{recipe}', [RecipeController::class, 'destroy'])->name('recipes.destroy')->middleware('can:admin');
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard')->middleware('can:admin');

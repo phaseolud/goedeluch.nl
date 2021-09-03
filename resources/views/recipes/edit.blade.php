@@ -11,7 +11,6 @@
         <form action="{{route('recipes.update', $recipe)}}" method="POST" class="grid md:grid-cols-3 gap-4 mx-2 pt-4" enctype="multipart/form-data">
             @method("PUT")
             @csrf
-            {!! RecaptchaV3::field('recipes') !!}
             <x-form.input type="text" name="title" label="Naam broodje" required value="{{$recipe->title}}"/>
             <x-form.input type="number" name="cooking_time_minutes" label="Bereidingstijd (minuten)" required value="{{$recipe->cooking_time_minutes}}"/>
 
@@ -27,9 +26,14 @@
             <x-form.steps-table :steps="$recipe->steps" />
             <x-form.checkbox :approved="$recipe->approved"/>
             <div class="md:col-span-3 flex justify-between items-center">
-                <x-form.recaptcha-text/>
+                {!! ReCaptcha::htmlFormSnippet() !!}
                 <button class="bg-primary-300 text-white text-left text-sm px-4 py-2 shadow-md flex-shrink-0">Deel recept!</button>
             </div>
+        </form>
+        <form action="{{route('recipes.destroy', $recipe)}}" method="POST" class="ml-2 mt-2">
+            @csrf
+            @method('DELETE')
+        <button type="submit" class="bg-red-300 text-white text-left text-sm px-4 py-2 shadow-md">Verwijder</button>
         </form>
     </x-white-box>
 
