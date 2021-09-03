@@ -11,7 +11,7 @@
                 <div>
                     <p class="text-lg font-semibold">Ingredienten</p>
                 @foreach($recipe->ingredients as $ingredient)
-                    <p>{{ $ingredient->pivot->amount .' ' .$ingredient->pivot->unit . ' ' . $ingredient->name}}</p>
+                    <p>{{ number_format($ingredient->pivot->amount, 0) .' ' .$ingredient->pivot->unit . ' ' . $ingredient->name}}</p>
                 @endforeach
                 </div>
 
