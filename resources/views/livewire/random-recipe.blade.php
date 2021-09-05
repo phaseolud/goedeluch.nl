@@ -10,7 +10,7 @@
         </div>
     </div> {{-- random generator buttons --}}
 
-    <div class="w-96">
+    <div class="w-full max-w-sm">
         @if($recipe)
             <x-sandwich-card :recipe="$recipe" />
         @endif

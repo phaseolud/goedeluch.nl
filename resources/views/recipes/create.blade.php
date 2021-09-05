@@ -22,10 +22,13 @@
             <x-form.textarea name="description" label="Omschrijving" required/>
             <x-form.ingredients-table />
             <x-form.steps-table />
-
-            <div class="md:col-span-3 flex justify-between items-center">
+            <div x-data="{buttonDisabled: disabled}">
+            <div>
                 {!! ReCaptcha::htmlFormSnippet() !!}
-                <button class="bg-primary-300 text-white text-left text-sm px-4 py-2 shadow-md flex-shrink-0">Deel recept!</button>
+            </div>
+            <div class="md:col-span-3 flex justify-end items-center">
+                <button class="bg-primary-300 text-white text-left text-sm px-4 py-2 shadow-md flex-shrink-0" x-bind:disabled="buttonDisabled">Deel recept!</button>
+            </div>
             </div>
         </form>
     </x-white-box>

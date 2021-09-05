@@ -38,7 +38,7 @@
     <div class="relative w-full bg-primary-400 bg-opacity-95 pb-8">
         <div class="mx-auto container 2xl:px-56 pt-4 px-2">
             <nav class="flex justify-between items-center mx-2">
-                <a href="/" class="text-white text-3xl">GoedeLunch.nl</a>
+                <a href="/" class="text-white text-2xl">GoedeLunch.nl</a>
                 <div class="flex justify-end">
                     @auth
                         <form action="{{route('logout')}}" method="POST">

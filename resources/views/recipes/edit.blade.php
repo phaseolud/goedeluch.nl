@@ -25,8 +25,10 @@
             <x-form.ingredients-table :ingredients="$recipe->ingredients" />
             <x-form.steps-table :steps="$recipe->steps" />
             <x-form.checkbox :approved="$recipe->approved"/>
-            <div class="md:col-span-3 flex justify-between items-center">
+            <div>
                 {!! ReCaptcha::htmlFormSnippet() !!}
+            </div>
+            <div class="md:col-span-3 flex justify-end items-center">
                 <button class="bg-primary-300 text-white text-left text-sm px-4 py-2 shadow-md flex-shrink-0">Deel recept!</button>
             </div>
         </form>
