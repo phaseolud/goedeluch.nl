@@ -13,7 +13,7 @@
                 {{ $recipe->description }}
             </p>
         </div>
-            <div class="flex items-center">
+            <div class="flex items-center mt-2">
                 <x-rating-stars :average-rating="$recipe->average_rating"/>
                 <livewire:rate-recipe :recipe="$recipe" />
             <div class="flex space-x-1 ml-2">

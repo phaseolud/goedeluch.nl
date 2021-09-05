@@ -25,11 +25,13 @@
             <x-form.ingredients-table :ingredients="$recipe->ingredients" />
             <x-form.steps-table :steps="$recipe->steps" />
             <x-form.checkbox :approved="$recipe->approved"/>
-            <div>
-                {!! ReCaptcha::htmlFormSnippet() !!}
-            </div>
-            <div class="md:col-span-3 flex justify-end items-center">
-                <button class="bg-primary-300 text-white text-left text-sm px-4 py-2 shadow-md flex-shrink-0">Deel recept!</button>
+            <div class="md:col-span-3">
+                <div>
+                    {!! ReCaptcha::htmlFormSnippet(['callback' => 'enableSubmitButton']) !!}
+                </div>
+                <div class="flex justify-end items-center mt-2">
+                    <button class="bg-primary-300 text-white text-left text-sm px-4 py-2 shadow-md flex-shrink-0 disabled:bg-gray-300 disabled:opacity-50" id="submitRecipe" disabled>Deel recept!</button>
+                </div>
             </div>
         </form>
         <form action="{{route('recipes.destroy', $recipe)}}" method="POST" class="ml-2 mt-2">

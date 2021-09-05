@@ -36,3 +36,8 @@ stepsHandle = function (steps=[new EmptyStep()]) {
         }
     }
 }
+
+enableSubmitButton = function ()
+{
+    document.getElementById('submitRecipe').disabled = false;
+}

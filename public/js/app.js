@@ -3840,6 +3840,10 @@ stepsHandle = function stepsHandle() {
   };
 };
 
+enableSubmitButton = function enableSubmitButton() {
+  document.getElementById('submitRecipe').disabled = false;
+};
+
 /***/ }),
 
 /***/ "./resources/js/app.js":
