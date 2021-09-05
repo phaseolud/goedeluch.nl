@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>GoedeLunch.nl</title>
+    <meta name="description" content="Hier vind je een overzicht met de lekkerste lunchgerechten, zodat jij heerlijk van jouw lunch kan genieten. Probeer een recept, of voeg zelf jouw lekkerste lunch toe!">
+    <meta name="robots" content="index, follow">
+
+
+    <title>GoedeLunch.nl, de lekkerste recepten voor jouw lunch</title>
 
     <!-- Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
