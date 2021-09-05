@@ -9,7 +9,7 @@
     <meta name="description" content="Hier vind je een overzicht met de lekkerste lunchgerechten, zodat jij heerlijk van jouw lunch kan genieten. Probeer een recept, of voeg zelf jouw lekkerste lunch toe!">
     <meta name="robots" content="index, follow">
 
-
+    <link rel="icon" type="image/svg+xml" href="{{asset('images/favicon.svg')}}">
     <title>GoedeLunch.nl, de lekkerste recepten voor jouw lunch</title>
 
     <!-- Fonts -->

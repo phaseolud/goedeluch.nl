@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 25.3.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 700 700" style="enable-background:new 0 0 700 700;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#E57B07;stroke:#070707;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;}
+	.st1{fill:#F7F3EF;stroke:#070707;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;}
+	.st2{fill:#EFAF00;stroke:#000000;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;}
+	.st3{fill:none;stroke:#070707;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;}
+</style>
+<g id="Chars">
+	<path class="st0" d="M330.3,481.6H143.6c-30.5,0-57.8-20.2-68.5-50.7l-12.4-35.4h348.5l-12.4,35.4
+		C388.1,461.4,360.9,481.6,330.3,481.6z"/>
+	<path class="st0" d="M58.5,381.2h356.9c3.8,0,6.9,3.1,6.9,6.9v0.4c0,3.8-3.1,6.9-6.9,6.9H58.5c-3.8,0-6.9-3.1-6.9-6.9v-0.4
+		C51.6,384.3,54.7,381.2,58.5,381.2z"/>
+	<polygon class="st0" points="534.4,407.6 407.2,407.6 411.5,395.5 534.4,395.5 	"/>
+	<path class="st0" d="M543.8,387.3h119.1c6.4,0,11.6,5.2,11.6,11.6v2.5c0,6.4-5.2,11.6-11.6,11.6H543.8c-6.4,0-11.6-5.2-11.6-11.6
+		v-2.5C532.2,392.5,537.4,387.3,543.8,387.3z"/>
+	<path class="st1" d="M202.9,167.9c-51.9,18.8-32.5,47.5-61.7,89.7c-10.4,15.1-8.5,31.3-2.2,38.4c6.6,7.5,12.3,21.9,54.8,20.3
+		c42.1-1.6,57.9-29.4,99.6-35.3c14.6-2.1,31.6-5.8,37.7-19.3c4.4-9.6,1.4-20.9-2.9-30.6c-8.1-18.6-21.1-35.4-38.5-45.8
+		C268.3,172.4,242.9,153.4,202.9,167.9z"/>
+	
+		<ellipse transform="matrix(0.1602 -0.9871 0.9871 0.1602 -37.3318 424.1017)" class="st2" cx="230.6" cy="234" rx="30.6" ry="30.6"/>
+	<line class="st3" x1="233.5" y1="324.9" x2="233.5" y2="369.8"/>
+	<line class="st3" x1="253.8" y1="307.9" x2="253.8" y2="352.8"/>
+	<line class="st3" x1="273.5" y1="312.8" x2="273.5" y2="357.7"/>
+	<circle class="st1" cx="315.1" cy="311.6" r="3.1"/>
+	<circle class="st1" cx="187.9" cy="349.5" r="5.2"/>
+</g>
+</svg>
