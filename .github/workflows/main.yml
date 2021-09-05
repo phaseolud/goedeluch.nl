@@ -27,9 +27,15 @@ jobs:
       run: npm install
     - name: Run npm production
       run: npm run prod
+    - name: Commit files
+      run: |
+        git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        git config --local user.name "github-actions[bot]"
+        git commit -m "Automatic run prod" -a
     - name: GitHub Push
       uses: ad-m/github-push-action@master
       with:
         # Token for the repo. Can be passed in using $\{{ secrets.GITHUB_TOKEN }}
         github_token: ${{ secrets.GITHUB_TOKEN }}
         branch: production
+        force: true
