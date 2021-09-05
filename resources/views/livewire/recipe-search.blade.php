@@ -1,11 +1,11 @@
 <div>
     {{-- If your happiness depends on money, you will never be happy with yourself. --}}
     <div class="flex items-center justify-center py-6 bg-primary-400 flex-col md:flex-row">
-        <p class="text-white text-xl font-semibold mb-2 md:mb-0">Zoek jouw broodje:</p>
+        <label for="search" class="text-white text-xl font-semibold mb-2 md:mb-0">Zoek jouw broodje:</label>
         <div class="flex items-center">
             <div class="relative">
                 <x-input class="ml-4" name="search" wire:model="search"/>
-                <button class=" absolute bg-white text-primary-400  right-2 inset-y-0" type="submit">
+                <button class=" absolute bg-white text-primary-400  right-2 inset-y-0" type="submit" name="search-button">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
                          stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
